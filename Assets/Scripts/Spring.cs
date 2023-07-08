@@ -22,10 +22,18 @@ public class Spring : ClickableBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.GetContact(0).normal.y < -.9f)
+        if (collision.GetContact(0).normal.y < -0.9f)
         {
-            animationController.ResetTrigger("Launch 0");
-            animationController.SetTrigger("Launch 0");
+            animationController.Play("Spring_Launch");
+
+            Rigidbody2D otherRigidbody = collision.collider.GetComponent<Rigidbody2D>();
+            if (otherRigidbody != null)
+            {
+                Vector2 direction = -collision.GetContact(0).normal;
+                float force = 10f; // Adjust the force as needed
+
+                otherRigidbody.velocity = direction * force;
+            }
         }
     }
 }
