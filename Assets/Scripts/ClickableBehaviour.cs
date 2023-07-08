@@ -16,9 +16,10 @@ public abstract class ClickableBehaviour : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //clickparticle.GetComponent<ParticleSystem>().Clear();
+        Debug.Log(clickparticle.transform);
         transform.parent.GetComponent<ClickManager>().active = this;
-        clickparticle.transform.position = transform.position;//fixed
+        clickparticle.transform.position 
+            = transform.position;//fixed
         clickparticle.GetComponent<ParticleSystem>().Play();
     }
 

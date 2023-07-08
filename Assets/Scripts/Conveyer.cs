@@ -14,7 +14,7 @@ public class Conveyer : ClickableBehaviour
     private void Start()
     {
         GetComponent<SurfaceEffector2D>().speed = -Speed;
-        TimePerSprite = .25f/Speed;
+        TimePerSprite = .75f/Speed;
     }
     // Update is called once per frame
     void Update()
