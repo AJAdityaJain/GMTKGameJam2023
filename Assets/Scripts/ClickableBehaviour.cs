@@ -7,7 +7,7 @@ public abstract class ClickableBehaviour : MonoBehaviour
 {
     private GameObject clickparticle;
 
-    private void Update()
+    private void Start()
     {
         clickparticle = GameObject.Find("ClickParticle");
         if (clickparticle == null)
@@ -16,8 +16,9 @@ public abstract class ClickableBehaviour : MonoBehaviour
 
     private void OnMouseDown()
     {
+        //clickparticle.GetComponent<ParticleSystem>().Clear();
         transform.parent.GetComponent<ClickManager>().active = this;
-        clickparticle.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        clickparticle.transform.position = transform.position;//fixed
         clickparticle.GetComponent<ParticleSystem>().Play();
     }
 
