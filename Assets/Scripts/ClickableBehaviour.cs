@@ -5,18 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public abstract class ClickableBehaviour : MonoBehaviour
 {
-    private void Update()
+    private void OnMouseDown()
     {
-        float InputX = Input.GetAxis("Horizontal");
-
-        if(InputX < 0)
-        {
-            Left(Mathf.Abs  ( InputX));
-        }
-        else if(InputX > 0)
-        {
-            Right(Mathf.Abs( InputX));
-        }
+        transform.parent.GetComponent<ClickManager>().active = this;
     }
 
     public abstract void Left(float mag);
