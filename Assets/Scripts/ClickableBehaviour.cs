@@ -14,8 +14,15 @@ public abstract class ClickableBehaviour : MonoBehaviour
             Debug.LogError("ClickParticle not found");
     }
 
+    //private void Update()
+    //{
+     //   if (clickparticle == null)
+         //   clickparticle = GameObject.Find("ClickParticle");
+  //  }
+
     private void OnMouseDown()
     {
+        clickparticle = GameObject.Find("ClickParticle");
         Debug.Log(clickparticle.transform);
         transform.parent.GetComponent<ClickManager>().active = this;
         clickparticle.transform.position 

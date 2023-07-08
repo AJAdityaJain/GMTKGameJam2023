@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 1750680033}
   - component: {fileID: 1750680032}
   m_Layer: 0
-  m_Name: Static Sprite
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1173,7 +1173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3662948421041105380, guid: f76297a8038a547208c87ac8a7f1e7f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.72
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 3662948421041105380, guid: f76297a8038a547208c87ac8a7f1e7f4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1210,6 +1210,10 @@ PrefabInstance:
     - target: {fileID: 3662948421041105403, guid: f76297a8038a547208c87ac8a7f1e7f4, type: 3}
       propertyPath: m_Name
       value: Hoop
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662948422868502325, guid: f76297a8038a547208c87ac8a7f1e7f4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f76297a8038a547208c87ac8a7f1e7f4, type: 3}
