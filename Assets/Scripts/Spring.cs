@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spring : ClickableBehaviour
 {
     Animator animationController;
+    public float BounceForce = 15f;
 
     public override void Left(float mag)
     {
@@ -29,11 +30,14 @@ public class Spring : ClickableBehaviour
             Rigidbody2D otherRigidbody = collision.collider.GetComponent<Rigidbody2D>();
             if (otherRigidbody != null)
             {
-                Vector2 direction = -collision.GetContact(0).normal;
-                float force = 10f; // Adjust the force as needed
-
-                otherRigidbody.velocity = direction * force;
+                
+                otherRigidbody.AddForce(GetPerpendicular(otherRigidbody.velocity) * BounceForce);
             }
         }
+    }
+
+    Vector2 GetPerpendicular(Vector2 vector)
+    {
+        return new Vector2(-vector.y, vector.x);
     }
 }
