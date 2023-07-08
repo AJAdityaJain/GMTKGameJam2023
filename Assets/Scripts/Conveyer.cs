@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SurfaceEffector2D))]
-public class Conveyer : MonoBehaviour
+public class Conveyer : ClickableBehaviour
 {
     public List<Sprite> sprites;
     int SpriteIndex = 0;
@@ -13,7 +13,7 @@ public class Conveyer : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<SurfaceEffector2D>().speed = Speed;
+        GetComponent<SurfaceEffector2D>().speed = -Speed;
         TimePerSprite = .25f/Speed;
     }
     // Update is called once per frame
@@ -40,5 +40,17 @@ public class Conveyer : MonoBehaviour
                 SpriteIndex = sprites.Count - 1;
             }
         }
+    }
+
+    public override void Left(float mag)
+    {
+        Speed = -Mathf.Abs(Speed);
+        Start();
+    }
+
+    public override void Right(float mag)
+    {
+        Speed = Mathf.Abs(Speed);
+        Start();
     }
 }
