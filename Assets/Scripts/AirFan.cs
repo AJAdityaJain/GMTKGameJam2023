@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class AirFan : MonoBehaviour
+public class AirFan : ClickableBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Left(float mag)
     {
-        
+         transform.GetChild(0).Rotate(Vector3.forward, mag * Time.deltaTime * 10f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Right(float mag)
     {
-        
+        transform.GetChild(0).Rotate(Vector3.forward, mag * Time.deltaTime * -10f);
     }
 }
