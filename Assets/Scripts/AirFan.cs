@@ -45,7 +45,7 @@ public class AirFan : ClickableBehaviour
             //    transform.GetChild(0).Rotate(Vector3.forward, mag * Time.deltaTime * 50f);
             Transform T =
 transform.GetChild(0).transform;
-    Quaternion targetRotation = Quaternion.Euler(T.rotation.eulerAngles.x, T.rotation.eulerAngles.y, Mathf.Clamp(T.rotation.eulerAngles.z + (mag * Time.deltaTime * rotationSpeed), minZRotation, maxZRotation));
+    Quaternion targetRotation = Quaternion.Euler(T.rotation.eulerAngles.x, T.rotation.eulerAngles.y, Mathf.Clamp(T.rotation.eulerAngles.z + (-mag * Time.deltaTime * rotationSpeed), minZRotation, maxZRotation));
             T.rotation = targetRotation;
         }
     }

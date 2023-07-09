@@ -37,6 +37,7 @@ public class Projectile : MonoBehaviour
         if(hoopsleft == 0)
         {
             ui.win();
+            hoopsleft = -1;
         }
 
         remainingtime -= Time.deltaTime;

@@ -12,6 +12,17 @@ public class UI : MonoBehaviour
     //public GameObject start;
     public float level;
 
+    private void Start()
+    {
+        //start.SetActive(true);
+        levelselect.SetActive(false);
+        pausemenu.SetActive(false);
+        bg.SetActive(false);
+        winscreen.SetActive(false);
+        level = 1;
+        loadscene();
+    }
+
     public void UnloadAllScenesExcept(string sceneName = ("UI"))
     {
         int c = SceneManager.sceneCount;
@@ -28,11 +39,13 @@ public class UI : MonoBehaviour
 
     public void win()
     {
+        Time.timeScale = 0;
         winscreen.SetActive(true);
     }
     public void nextlvl()
     {
 
+        Time.timeScale = 1;
         winscreen.SetActive(false);
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
