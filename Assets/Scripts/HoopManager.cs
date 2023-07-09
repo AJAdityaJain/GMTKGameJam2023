@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class HoopManager : MonoBehaviour
 {
-    int hoopsCount = 0;
+    public int hoopsCount = 0;
 
     private void Start()
     {
         hoopsCount = transform.childCount;
     }
 
-    public void AddHoops(Hoop h)
+    public void HoopTriggered(Hoop h)
     {
-        if (h.isActive) { 
+        if (h.isActive)
+        { 
             h.isActive = false;
-        hoopsCount--;
-        if (hoopsCount == 0)
-        {
-            // Win
-            Debug.Log("Win");
-        } 
+            hoopsCount--;
+
+            if (hoopsCount == 0)
+            {
+                // Win
+                Debug.Log("Win");
+            } 
         }
     }
 }

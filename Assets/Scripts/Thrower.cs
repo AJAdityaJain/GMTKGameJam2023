@@ -17,6 +17,7 @@ public class Thrower : MonoBehaviour
         {
             time = 0f;
             var go = Instantiate(prefab, transform.position, Quaternion.identity);
+            go.transform.parent = gameObject.transform;
             go.GetComponent<Rigidbody2D>().velocity = Direction;
         }
     }
