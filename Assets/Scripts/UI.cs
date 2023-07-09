@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
     public GameObject levelselect;
     public GameObject pausemenu;
     public GameObject bg;
+    public GameObject winscreen;
     public float level;
 
     public void UnloadAllScenesExcept(string sceneName = ("UI"))
@@ -21,6 +22,34 @@ public class UI : MonoBehaviour
                 SceneManager.UnloadSceneAsync(scene);
             }
         }
+    }
+
+    public void win()
+    {
+        winscreen.SetActive(true);
+    }
+
+    public void nextlvl()
+    {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            if (scene.name != "UI")
+            {
+                if (float.TryParse(scene.name, out level))
+                {
+                    break;
+                }
+                else
+                {
+                    Debug.LogError("Unable to parse scene name as a float: " + scene.name);
+                }
+            }
+        }
+
+        level += 1;
+        loadscene();
+        winscreen.SetActive(false);
     }
 
     public void reload()

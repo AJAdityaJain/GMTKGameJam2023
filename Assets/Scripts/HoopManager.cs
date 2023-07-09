@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class HoopManager : MonoBehaviour
 {
+    public UI ui;
     public int hoopsCount = 0;
 
     private void Start()
     {
+        ui = GameObject.Find("Canvas").GetComponent<UI>();
         hoopsCount = transform.childCount;
     }
 
@@ -20,8 +22,17 @@ public class HoopManager : MonoBehaviour
 
             if (hoopsCount == 0)
             {
-                // Win
-                Debug.Log("Win");
+                if (ui != null)
+                {
+                    // Win
+                    Debug.Log("Win");
+                    ui.win();
+                }
+                else
+                {
+                    ui = GameObject.Find("Canvas").GetComponent<UI>();
+                    ui.win();
+                }
             } 
         }
     }
