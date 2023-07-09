@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4275987710372756629}
   - component: {fileID: 4275987710372756628}
   - component: {fileID: 5851430967381679349}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: PaperBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,4 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec20e3d609223b4ca47a62213048946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondsPerish: 7
+  SecondsPerish: 15

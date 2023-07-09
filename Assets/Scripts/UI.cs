@@ -94,12 +94,12 @@ public class UI : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab) && levelselect.activeInHierarchy == false)
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab) && levelselect.activeInHierarchy == false && winscreen.activeInHierarchy == false)
         {
             togglePause();
         }
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) && bg.activeInHierarchy == false && winscreen.activeInHierarchy == false)
         {
             reload();
         }

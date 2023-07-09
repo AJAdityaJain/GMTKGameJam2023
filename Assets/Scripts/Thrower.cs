@@ -16,7 +16,7 @@ public class Thrower : MonoBehaviour
         if (time >= SecondsDelay)
         {
             time = 0f;
-            var go = Instantiate(prefab, transform.position, Quaternion.identity);
+            var go = Instantiate(prefab, transform.position, Quaternion.Euler(0f, 0, Random.Range(0, 360)));
             go.transform.parent = gameObject.transform;
             go.GetComponent<Rigidbody2D>().velocity = Direction;
         }
