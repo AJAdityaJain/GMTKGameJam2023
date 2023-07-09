@@ -7,6 +7,7 @@ public class Thrower : MonoBehaviour
     public Vector2 Direction = Vector2.up;
     public float SecondsDelay = 2f;
     public GameObject prefab;
+    public float instanceamount;
 
     public float time = 0f;
 
@@ -19,6 +20,8 @@ public class Thrower : MonoBehaviour
             var go = Instantiate(prefab, transform.position, Quaternion.Euler(0f, 0, Random.Range(0, 360)));
             go.transform.parent = gameObject.transform;
             go.GetComponent<Rigidbody2D>().velocity = Direction;
+            go.name = "paperball " + instanceamount.ToString();
+            instanceamount += 1;
         }
     }
 }

@@ -5,11 +5,26 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float SecondsPerish = 7f;
+    public float remainingtime;
+    private SpriteRenderer self;
+
+    private void Awake()
+    {
+        self = gameObject.GetComponent<SpriteRenderer>();
+        remainingtime = SecondsPerish;
+    }
 
     private void Update()
     {
-        SecondsPerish -= Time.deltaTime;
-        if (SecondsPerish <= 0f)
+        remainingtime -= Time.deltaTime;
+
+        Color currentColor = self.color;
+
+        currentColor.a = remainingtime / SecondsPerish;
+
+        self.color = currentColor;
+
+        if (remainingtime <= 0f)
         {
             Destroy(gameObject);
         }
