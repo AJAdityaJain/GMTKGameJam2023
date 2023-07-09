@@ -1352,7 +1352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GMTK GameJam Boiiiii
+  m_Text: Game paused + icon?
 --- !u!222 &353910155
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7393,7 +7393,7 @@ GameObject:
   - component: {fileID: 928638430}
   - component: {fileID: 928638429}
   m_Layer: 5
-  m_Name: resume
+  m_Name: play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7493,9 +7493,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 3355373fe079a4737ac468ee8e4f4073, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 6caa69dbb11b949eebce77ef19b2edc7, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 6caa69dbb11b949eebce77ef19b2edc7, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 7d293ec5d5b318c40be8a6ab97bd4643, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 54a9c90ac89fb284f8f9f0534cc709d1, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 54a9c90ac89fb284f8f9f0534cc709d1, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -7510,7 +7510,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1331831854}
         m_TargetAssemblyTypeName: UI, Assembly-CSharp
-        m_MethodName: togglePause
+        m_MethodName: toggleLevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7540,7 +7540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6caa69dbb11b949eebce77ef19b2edc7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54a9c90ac89fb284f8f9f0534cc709d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8649,6 +8649,7 @@ MonoBehaviour:
   pausemenu: {fileID: 728306348}
   bg: {fileID: 1408078918}
   winscreen: {fileID: 519857187}
+  start: {fileID: 1516664427}
   level: 0
 --- !u!82 &1331831855
 AudioSource:
@@ -9026,7 +9027,7 @@ GameObject:
   - component: {fileID: 1451869400}
   - component: {fileID: 1451869399}
   m_Layer: 5
-  m_Name: lvl
+  m_Name: quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9126,9 +9127,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 5238707e910cb418d98aeb6d0e6a7084, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 7823c0eb11a3b4b0689e5126b2f87b6a, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 7823c0eb11a3b4b0689e5126b2f87b6a, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 3ef89c93a4512604d84b1ea7880b3de0, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 13beab634737dde43bf8c5f37b1bc1d4, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 13beab634737dde43bf8c5f37b1bc1d4, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -9143,7 +9144,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1331831854}
         m_TargetAssemblyTypeName: UI, Assembly-CSharp
-        m_MethodName: toggleLevelSelect
+        m_MethodName: quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9173,7 +9174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7823c0eb11a3b4b0689e5126b2f87b6a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13beab634737dde43bf8c5f37b1bc1d4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
