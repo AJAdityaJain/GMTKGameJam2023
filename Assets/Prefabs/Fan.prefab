@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  minZRotation: -180
-  maxZRotation: 0
+  minZRotation: 180
+  maxZRotation: 360
   state: 0
   Force: 15

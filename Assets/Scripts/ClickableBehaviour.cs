@@ -22,27 +22,22 @@ public abstract class ClickableBehaviour : MonoBehaviour
 
     public void OnMouseDown()
     {
-        ClickableBehaviour c;
-        bool parentClickable = transform.parent.TryGetComponent<ClickableBehaviour>(out c);
-        if (parentClickable)
+        if (transform.parent.TryGetComponent<ClickableBehaviour>(out ClickableBehaviour cb))
         {
-            c.OnMouseDown();
+            cb.OnMouseDown();
         }
-        else
+        else if (transform.parent.TryGetComponent<ClickManager>(out ClickManager cm))
         {
-            clickparticle = GameObject.Find("ClickParticle");
-            transform.parent.GetComponent<ClickManager>().active = this;
-
-            clickparticle.transform.position
-                = transform.position;//fixed
-            clickparticle.GetComponent<ParticleSystem>().Play();
+            if (cm.gameObject.activeInHierarchy)
+            {
+                transform.parent.GetComponent<ClickManager>().active = this;
+                clickparticle = GameObject.Find("ClickParticle");
+                clickparticle.transform.position
+                    = transform.position;//fixed
+                clickparticle.GetComponent<ParticleSystem>().Play();
+            }
         }
 
-        clickparticle = GameObject.Find("ClickParticle");
-        transform.parent.GetComponent<ClickManager>().active = this;
-        clickparticle.transform.position 
-            = transform.position;//fixed
-        clickparticle.GetComponent<ParticleSystem>().Play();
     }
 
     public abstract void Left(float mag);

@@ -9,6 +9,9 @@ public class Jeff : MonoBehaviour
 {
     //YES i named hi jeff
 
+
+    public Animator animator;
+
     public GameObject Test;
 
     LineRenderer lr;
@@ -18,12 +21,14 @@ public class Jeff : MonoBehaviour
     public float scale = 10f;
     public float maxVelocity = 30;
 
+    public Transform BallTransform;
     Vector3 downLoc = Vector3.zero;
     bool isDown = false;
 
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         lr = GetComponent<LineRenderer>();
     }
 
@@ -64,19 +69,26 @@ public class Jeff : MonoBehaviour
 
             if (vel.magnitude > 4)
             {
-                GameObject go;
-                go = Instantiate(Test);
-
-                go.transform.position = gameObject.transform.position;
-                Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
-                rb.velocity = vel;
-                if (rb.velocity.magnitude > maxVelocity)
-                {
-                    rb.velocity = rb.velocity.normalized * maxVelocity;
-                }
-                rb.velocity *= (2 * PlayerPrefs.GetInt("invert")) - 1;
-
+                animator.Play("Jeff_Throw");
+                StartCoroutine(WaitInstanciate(vel));
             }
         }
+    }
+
+    public IEnumerator WaitInstanciate(Vector2 vel)
+    {
+        yield return new WaitForSeconds(0.2f);
+        GameObject go;
+        go = Instantiate(Test);
+
+        go.transform.position = BallTransform.position;
+        Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
+        rb.velocity = vel;
+        if (rb.velocity.magnitude > maxVelocity)
+        {
+            rb.velocity = rb.velocity.normalized * maxVelocity;
+        }
+        rb.velocity *= (2 * PlayerPrefs.GetInt("invert")) - 1;
+
     }
 }

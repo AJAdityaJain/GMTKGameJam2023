@@ -28,7 +28,7 @@ public class Spring : ClickableBehaviour
     private void Control(float mag)
     {
         if(state == State.Position)
-        rb.velocity = mag * Time.deltaTime * Vector2.right*10000;
+        rb.velocity = mag * Time.deltaTime * Vector2.right*10000*1.5f;
     }
 
     private void Awake()
