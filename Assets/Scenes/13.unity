@@ -158,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 450805648075167026, guid: 9dc2886827fec564597f7c8119f7ccef, type: 3}
       propertyPath: BallTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 798863631}
     - target: {fileID: 450805648075167026, guid: 9dc2886827fec564597f7c8119f7ccef, type: 3}
       propertyPath: instanceamount
       value: 22
@@ -328,6 +328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f76297a8038a547208c87ac8a7f1e7f4, type: 3}
+--- !u!4 &798863631 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7568807095759211008, guid: 9dc2886827fec564597f7c8119f7ccef, type: 3}
+  m_PrefabInstance: {fileID: 361227464}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &932660413
 PrefabInstance:
   m_ObjectHideFlags: 0
