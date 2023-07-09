@@ -9,6 +9,8 @@ public class Spring : ClickableBehaviour
         Position,
         None
     }
+    [SerializeField]
+    State state = State.Position;
     Animator animationController;
     Rigidbody2D rb;
     public float BounceForce = 15f;
@@ -25,9 +27,8 @@ public class Spring : ClickableBehaviour
 
     private void Control(float mag)
     {
-        rb.isKinematic = false;
-            rb.velocity = mag * Time.deltaTime * Vector2.right*10;
-        rb.isKinematic = true;
+        if(state == State.Position)
+        rb.velocity = mag * Time.deltaTime * Vector2.right*10000;
     }
 
     private void Awake()
@@ -46,13 +47,13 @@ public class Spring : ClickableBehaviour
             if (otherRigidbody != null)
             {
                 
-                otherRigidbody.AddForce(GetPerpendicular(otherRigidbody.velocity) * BounceForce);
+                otherRigidbody.AddForce(GetPerpendicular(otherRigidbody.velocity,BounceForce));
             }
         }
     }
 
-    Vector2 GetPerpendicular(Vector2 vector)
+    Vector2 GetPerpendicular(Vector2 vector, float y)
     {
-        return new Vector2(-vector.y, vector.x);
+        return new Vector2(vector.x, -vector.y+y);
     }
 }

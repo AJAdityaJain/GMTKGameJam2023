@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
 
         if (remainingtime <= 0f)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
