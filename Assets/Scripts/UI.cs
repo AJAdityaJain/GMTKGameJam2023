@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
     public GameObject pausemenu;
     public GameObject bg;
     public GameObject winscreen;
+    public GameObject start;
     public float level;
 
     public void UnloadAllScenesExcept(string sceneName = ("UI"))
@@ -23,6 +24,7 @@ public class UI : MonoBehaviour
             }
         }
     }
+
 
     public void win()
     {
@@ -107,6 +109,10 @@ public class UI : MonoBehaviour
 
     public void togglePause()
     {
+        if(levelselect.activeInHierarchy == true || start.activeInHierarchy == true)
+        {
+            return;
+        }   
         if (Time.timeScale > 0)
         {
             Time.timeScale = 0;
@@ -123,16 +129,30 @@ public class UI : MonoBehaviour
 
     public void toggleLevelSelect()
     {
+        //toggleStart();
         level = 0;
-        if (levelselect.activeInHierarchy == true)
+        start.SetActive(levelselect.activeInHierarchy);
+        pausemenu.SetActive(false);
+        bg.SetActive(false);
+        levelselect.SetActive(!levelselect.activeInHierarchy);
+        
+    }
+    public void toggleStart()
+    {
+        if (start.activeInHierarchy == true)
         {
-            levelselect.SetActive(false);
-            pausemenu.SetActive(true);
+            levelselect.SetActive(true);
+            start.SetActive(false);
         }
         else
         {
-            levelselect.SetActive(true);
-            pausemenu.SetActive(false);
+            levelselect.SetActive(false);
+            start.SetActive(true);
         }
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }
