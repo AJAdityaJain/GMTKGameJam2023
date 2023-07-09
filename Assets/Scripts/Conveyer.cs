@@ -73,7 +73,7 @@ public class Conveyer : ClickableBehaviour
         }
         else if (state == State.Speed)
         {
-            Speed += mag / 5;
+            Speed += -mag / 5;
             if (Speed < -MaxSpeed)
                 Speed = -MaxSpeed;
             if (Speed > MaxSpeed)
