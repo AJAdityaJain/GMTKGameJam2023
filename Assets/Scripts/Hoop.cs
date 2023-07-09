@@ -8,6 +8,8 @@ public class Hoop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GetComponentInParent<HoopManager>().HoopTriggered(this);
+        Projectile paperball = collision.gameObject.GetComponent<Projectile>();
+        if (paperball != null)
+            paperball.iWentThroughYou(gameObject);
     }
 }
