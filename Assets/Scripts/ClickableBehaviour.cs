@@ -36,6 +36,11 @@ public abstract class ClickableBehaviour : MonoBehaviour
                 = transform.position;//fixed
             clickparticle.GetComponent<ParticleSystem>().Play();
         }
+        clickparticle = GameObject.Find("ClickParticle");
+        transform.parent.GetComponent<ClickManager>().active = this;
+        clickparticle.transform.position 
+            = transform.position;//fixed
+        clickparticle.GetComponent<ParticleSystem>().Play();
     }
 
     public abstract void Left(float mag);

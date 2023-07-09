@@ -12,11 +12,17 @@ public class AirFan : ClickableBehaviour
 
     public override void Left(float mag)
     {
-         transform.GetChild(0).Rotate(Vector3.forward, mag * Time.deltaTime * 10f);
+        Control(mag);
     }
 
     public override void Right(float mag)
     {
-        transform.GetChild(0).Rotate(Vector3.forward, mag * Time.deltaTime * -10f);
+        Control(mag);
+    }
+
+    private void Control(float mag)
+    {
+        transform.GetChild(0).Rotate(Vector3.forward, mag * Time.deltaTime * 10f * Mathf.Sign(mag));
+
     }
 }

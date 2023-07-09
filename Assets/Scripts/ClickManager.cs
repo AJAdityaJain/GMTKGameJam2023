@@ -14,11 +14,11 @@ public class ClickManager : MonoBehaviour
         var inp = Input.GetAxis("Horizontal");
         if(inp > 0)
         {
-            active.Right(Mathf.Abs( inp));
+            active.Right( inp);
         }
         else if(inp < 0)
         {
-            active.Left(Mathf.Abs(inp));
+            active.Left(inp);
         }
     }
 }

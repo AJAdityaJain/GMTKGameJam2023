@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class Spring : ClickableBehaviour
 {
+    private enum State
+    {
+        Position,
+        None
+    }
     Animator animationController;
+    Rigidbody2D rb;
     public float BounceForce = 15f;
 
     public override void Left(float mag)
     {
-        transform.position += mag * Time.deltaTime * Vector3.left;
+        Control(mag);
     }
 
     public override void Right(float mag)
     {
-        transform.position += mag * Time.deltaTime * Vector3.right;
+        Control(mag);
+    }
+
+    private void Control(float mag)
+    {
+        rb.isKinematic = false;
+            rb.velocity = mag * Time.deltaTime * Vector2.right*10;
+        rb.isKinematic = true;
     }
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         animationController = GetComponent<Animator>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
