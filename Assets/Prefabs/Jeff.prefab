@@ -188,7 +188,7 @@ LineRenderer:
         outWeight: 0.1550927
       - serializedVersion: 3
         time: 0.16599937
-        value: 0.010152284
+        value: 0
         inSlope: -0.11329742
         outSlope: -0.11329742
         tangentMode: 0
@@ -205,7 +205,7 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.4718711
+        time: 0.48108742
         value: 0
         inSlope: -0.18518521
         outSlope: -0.18518521
@@ -223,13 +223,13 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.79988235
+        time: 0.76530594
         value: 0
-        inSlope: -0.54794383
-        outSlope: -0.54794383
+        inSlope: 0.86945224
+        outSlope: 0.86945224
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 1
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.8893779
@@ -291,7 +291,7 @@ LineRenderer:
   m_Loop: 0
 --- !u!95 &8684722950434350480
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -308,7 +308,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &5801087264981603207
 GameObject:
   m_ObjectHideFlags: 0
