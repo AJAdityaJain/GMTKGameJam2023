@@ -5,6 +5,7 @@ using UnityEngine;
 public class Thrower : MonoBehaviour
 {
     public Vector2 Direction = Vector2.up;
+    public float Magnitude = 10f;
     public float SecondsDelay = 2f;
     public GameObject prefab;
     public float instanceamount;
@@ -19,7 +20,7 @@ public class Thrower : MonoBehaviour
             time = 0f;
             var go = Instantiate(prefab, transform.position, Quaternion.Euler(0f, 0, Random.Range(0, 360)));
             go.transform.parent = gameObject.transform;
-            go.GetComponent<Rigidbody2D>().velocity = Direction;
+            go.GetComponent<Rigidbody2D>().velocity = Direction.normalized*Magnitude;
             go.name = "paperball " + instanceamount.ToString();
             instanceamount += 1;
         }

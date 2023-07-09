@@ -30,9 +30,10 @@ public class UI : MonoBehaviour
     {
         winscreen.SetActive(true);
     }
-
     public void nextlvl()
     {
+
+        winscreen.SetActive(false);
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
             Scene scene = SceneManager.GetSceneAt(i);
@@ -50,8 +51,8 @@ public class UI : MonoBehaviour
         }
 
         level += 1;
+        //Debug.Log(winscreen.activeInHierarchy);
         loadscene();
-        winscreen.SetActive(false);
     }
 
     public void reload()
@@ -109,7 +110,7 @@ public class UI : MonoBehaviour
 
     public void togglePause()
     {
-        if(levelselect.activeInHierarchy == true || start.activeInHierarchy == true)
+        if(levelselect.activeInHierarchy || start.activeInHierarchy || winscreen.activeInHierarchy)
         {
             return;
         }   
