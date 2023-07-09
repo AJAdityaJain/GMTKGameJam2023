@@ -103,6 +103,7 @@ MonoBehaviour:
   Magnitude: 10
   SecondsDelay: 5
   prefab: {fileID: 4275987710372756651, guid: 9985df26b90b26b4baabd14f22d7336b, type: 3}
+  BallTransform: {fileID: 7568807095759211008}
   instanceamount: 0
   time: 0
 --- !u!95 &8684722950434350480

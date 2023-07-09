@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e986f053aa0cf3478e3790242525757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BounceForce: 30
+  state: 0
+  BounceForce: 90
 --- !u!50 &3592139287383569576
 Rigidbody2D:
   serializedVersion: 4
