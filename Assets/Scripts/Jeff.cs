@@ -34,43 +34,45 @@ public class Jeff : MonoBehaviour
 
     void Update()
     {
-
-        if (isDown)
+        if (Time.timeScale != 0)
         {
-            Vector2 v = (downLoc - Input.mousePosition) / scale;
-            if (v.magnitude > maxVelocity)
+            if (isDown)
             {
-                v = v.normalized * maxVelocity;
+                Vector2 v = (downLoc - Input.mousePosition) / scale;
+                if (v.magnitude > maxVelocity)
+                {
+                    v = v.normalized * maxVelocity;
+                }
+                lr.positionCount = LineSize;
+                int s = (2 * PlayerPrefs.GetInt("invert")) - 1;
+
+                for (int i = 0; i < LineSize; i++)
+                {
+                    float x = transform.position.x + (v.x * i * s) / (g * Physics.gravity.y);
+                    float y = transform.position.y + ((v.y * i * s) + (0.5f * g * i * i)) / (g * Physics.gravity.y);
+                    lr.SetPosition(i, new Vector3(x, y, 0));
+                }
             }
-            lr.positionCount = LineSize;
-            int s = (2 * PlayerPrefs.GetInt("invert")) - 1;
-
-            for (int i = 0; i < LineSize; i++)
+            else
             {
-                float x = transform.position.x + (v.x * i * s) / (g * Physics.gravity.y);
-                float y = transform.position.y + ((v.y * i * s) + (0.5f * g * i * i)) / (g * Physics.gravity.y);
-                lr.SetPosition(i, new Vector3(x, y, 0));
+                lr.positionCount = 0;
             }
-        }
-        else
-        {
-            lr.positionCount = 0;
-        }
-        if (Input.GetMouseButtonDown(0) && !isDown)
-        {
-            isDown = true;
-            downLoc = Input.mousePosition;
-        }
-
-        if (Input.GetMouseButtonUp(0) && isDown)
-        {
-            isDown = false;
-            var vel = (downLoc - Input.mousePosition) / scale;
-
-            if (vel.magnitude > 4)
+            if (Input.GetMouseButtonDown(0) && !isDown)
             {
-                animator.Play("Jeff_Throw");
-                StartCoroutine(WaitInstanciate(vel));
+                isDown = true;
+                downLoc = Input.mousePosition;
+            }
+
+            if (Input.GetMouseButtonUp(0) && isDown)
+            {
+                isDown = false;
+                var vel = (downLoc - Input.mousePosition) / scale;
+
+                if (vel.magnitude > 4)
+                {
+                    animator.Play("Jeff_Throw");
+                    StartCoroutine(WaitInstanciate(vel));
+                }
             }
         }
     }
@@ -80,6 +82,7 @@ public class Jeff : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         GameObject go;
         go = Instantiate(Test);
+        go.transform.parent = gameObject.transform;
 
         go.transform.position = BallTransform.position;
         Rigidbody2D rb = go.GetComponent<Rigidbody2D>();

@@ -14,6 +14,11 @@ public class Thrower : MonoBehaviour
 
     public float time = 0f;
 
+    private void Start()
+    {
+        time = 0.7f * SecondsDelay;    
+    }
+
     private void Awake()
     {
         anim = GetComponent<Animator>();

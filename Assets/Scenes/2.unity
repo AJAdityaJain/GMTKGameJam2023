@@ -667,7 +667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 85239740172982684, guid: da064eaca72cc46b38934a98c3b62447, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.08
+      value: -4.31
       objectReference: {fileID: 0}
     - target: {fileID: 85239740172982684, guid: da064eaca72cc46b38934a98c3b62447, type: 3}
       propertyPath: m_LocalPosition.z
@@ -920,6 +920,18 @@ PrefabInstance:
     - target: {fileID: 4602911886066633111, guid: a966abf1c1d57e2439d7faae9caa907f, type: 3}
       propertyPath: m_Name
       value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124103983477967852, guid: a966abf1c1d57e2439d7faae9caa907f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274027339796521999, guid: a966abf1c1d57e2439d7faae9caa907f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404955185162849780, guid: a966abf1c1d57e2439d7faae9caa907f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a966abf1c1d57e2439d7faae9caa907f, type: 3}

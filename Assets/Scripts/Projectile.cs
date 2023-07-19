@@ -34,10 +34,14 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        if(hoopsleft == 0)
+        if(hoopsleft <= 0 && hoopsleft >= -100 )
         {
-            ui.win();
-            hoopsleft = -1;
+            if (hoopsleft == -100)
+            {
+                ui.win();
+            }
+
+            hoopsleft -= 1;
         }
 
         remainingtime -= Time.deltaTime;

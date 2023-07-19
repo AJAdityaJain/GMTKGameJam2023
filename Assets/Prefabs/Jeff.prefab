@@ -105,6 +105,7 @@ MonoBehaviour:
   Magnitude: 10
   SecondsDelay: 5
   prefab: {fileID: 4275987710372756651, guid: 9985df26b90b26b4baabd14f22d7336b, type: 3}
+  BallTransform: {fileID: 0}
   instanceamount: 0
   time: 0
 --- !u!114 &450805648075167030
@@ -178,8 +179,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0046081543
-        value: 0.111677006
+        time: 0.001449585
+        value: 0.2131327
         inSlope: 0.13154541
         outSlope: 0.13154541
         tangentMode: 0
@@ -187,74 +188,20 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.1550927
       - serializedVersion: 3
-        time: 0.16599937
-        value: 0
-        inSlope: -0.11329742
-        outSlope: -0.11329742
+        time: 0.99999994
+        value: 0.036231883
+        inSlope: -0.2548309
+        outSlope: -0.2548309
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.31333923
-        value: 0.09459751
-        inSlope: -0.0647602
-        outSlope: -0.0647602
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.48108742
-        value: 0
-        inSlope: -0.18518521
-        outSlope: -0.18518521
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.66356623
-        value: 0.07868232
-        inSlope: 0.054796964
-        outSlope: 0.054796964
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.76530594
-        value: 0
-        inSlope: 0.86945224
-        outSlope: 0.86945224
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 1
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.8893779
-        value: 0.04568497
-        inSlope: -0.22113517
-        outSlope: -0.22113517
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.99768066
-        value: 0
-        inSlope: 0.22033352
-        outSlope: 0.22033352
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.87703127
+        inWeight: 0.15712216
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 0.7921569}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -282,7 +229,7 @@ LineRenderer:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 6
-    numCapVertices: 2
+    numCapVertices: 3
     alignment: 0
     textureMode: 0
     shadowBias: 0.5
@@ -291,7 +238,7 @@ LineRenderer:
   m_Loop: 0
 --- !u!95 &8684722950434350480
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -308,7 +255,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5801087264981603207
 GameObject:
   m_ObjectHideFlags: 0

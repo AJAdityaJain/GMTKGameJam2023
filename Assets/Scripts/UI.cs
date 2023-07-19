@@ -44,9 +44,8 @@ public class UI : MonoBehaviour
     }
     public void nextlvl()
     {
-
-        Time.timeScale = 1;
         winscreen.SetActive(false);
+        Time.timeScale = 1;
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
             Scene scene = SceneManager.GetSceneAt(i);

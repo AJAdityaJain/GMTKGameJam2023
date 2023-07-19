@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spring : ClickableBehaviour
 {
+    public float speed;
     private enum State
     {
         Position,
@@ -28,7 +29,7 @@ public class Spring : ClickableBehaviour
     private void Control(float mag)
     {
         if(state == State.Position)
-        rb.velocity = mag * Vector2.right*10000*1.5f;
+        rb.velocity = mag * Time.deltaTime * Vector2.right*10000*speed;
     }
 
     private void Awake()
